@@ -59,8 +59,7 @@ def main():
 
 result = ""
 if st.button("Predict"):
-    result = predict_note_authentication(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age,
-                     Outcome)
+    result = predict_note_authentication(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age, Outcome)
     st.success('Model has predicted {}'.format(result))
 if st.button("About"):
     st.subheader("Developed by Ritik Banger")
