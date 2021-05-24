@@ -9,9 +9,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 # Load the pickled model
 model = pickle.load(open('labassignmen.pkl', 'rb'))
 dataset = pd.read_csv('diabetes.csv')
-X = dataset[
-    ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age",
-     "Outcome"]]
+X = dataset[["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age", "Outcome"]]
 
 from sklearn.preprocessing import StandardScaler
 
@@ -19,10 +17,8 @@ sc = StandardScaler()
 X = sc.fit_transform(X)
 
 
-def predict_note_authentication(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI,
-                                DiabetesPedigreeFunction, Age, Outcome):
-    output = model.predict(sc.transform(
-        [[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age, Outcome]]))
+def predict_note_authentication(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age, Outcome):
+    output = model.predict(sc.transform([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age, Outcome]]))
     print("Diabetes =", output)
     if output == [1]:
         prediction = "Diabetes"
@@ -57,7 +53,7 @@ def main():
     Age = st.number_input('Insert a Age', 18, 60)
 
 
-result = ""
+resul = ""
 if st.button("Predict"):
     result = predict_note_authentication(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age, Outcome)
     st.success('Model has predicted {}'.format(result))
