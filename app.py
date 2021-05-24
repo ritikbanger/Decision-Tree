@@ -7,7 +7,7 @@ import pandas as pd
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 # Load the pickled model
-model = pickle.load(open('dtree.pkl', 'rb'))
+model = pickle.load(open('labassignmen.pkl', 'rb'))
 dataset = pd.read_csv('diabetes.csv')
 X = dataset[
     ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age",
