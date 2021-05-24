@@ -57,14 +57,14 @@ def main():
     Age = st.number_input('Insert a Age', 18, 60)
 
 
-resul = ""
+result = ""
 if st.button("Predict"):
-    result = predict(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age,
+    result = predict_note_authentication(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age,
                      Outcome)
     st.success('Model has predicted {}'.format(result))
 if st.button("About"):
     st.subheader("Developed by Ritik Banger")
-    st.subheader("Head , Department of Computer Engineering")
+    st.subheader("Department of Computer Engineering")
 
 if __name__ == '__main__':
     main()
